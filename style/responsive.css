@@ -127,7 +127,14 @@
     .info_section .info_form form input {
         width: 100%;
         margin-bottom: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
     }
+    .info_section .info_form form button {
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+
 
 
 }
