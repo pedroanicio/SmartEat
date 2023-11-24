@@ -26,7 +26,7 @@
     }
 
     .slider_section {
-        height: calc(100% - 80px);
+        height: calc(650px);
         background-image: url(../images/responsive.jpg);
         background-size: cover;
       }
@@ -55,6 +55,7 @@
 
         justify-content: center;
         left: 0;
+        top: 420px;
         bottom: 55px;
 
     }
