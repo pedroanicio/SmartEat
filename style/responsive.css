@@ -25,6 +25,12 @@
         padding: 75px 0;
     }
 
+    .slider_section {
+        height: calc(100% - 80px);
+        background-image: url(../images/responsive.jpg);
+        background-size: cover;
+      }
+
     .custom_nav2 .navbar-nav {
         margin-top: 10px;
     }
