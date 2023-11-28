@@ -15,6 +15,9 @@ body {
   justify-content: center;
   background: url(../images/responsive.jpg);
 }
+#btnSignup, #btnSignin {
+  color: #000000;
+}
 
 .container {
   background-color: whitesmoke;
