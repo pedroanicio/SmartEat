@@ -16,77 +16,29 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
 
   <!-- bootstrap -->
-  <link rel="stylesheet" type="text/css" href="style/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="../style/bootstrap.css" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap"
     rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="style/style.css" rel="stylesheet" />
+  <link href="../style/style.css" rel="stylesheet" />
   <!-- responsividade -->
-  <link href="style/responsive.css" rel="stylesheet" />
+  <link href="../style/responsive.css" rel="stylesheet" />
 </head>
 
 <body>
   <div id="cookie-notification" class="CookieMessage" style="display: none;">
     <div class="CookieMessage-content"> 
-      <p>Este site utiliza cookies de navegação para a melhor experiência do usuário. <a href="">Saiba mais</a></p>
+      <p>Este site utiliza cookies de navegação para a melhor experiência do usuário. <a href="politicaPrivacidade.php">Saiba mais</a></p>
       <p><a id="cookie-notification-close" class="CookieMessage-button" href="#">Aceitar</a></p>          
     </div>
   </div>
-  <script>
-    if (!localStorage.getItem("cookiesAccepted")) { 
-    var cookieMessage = document.getElementById('cookie-notification');  
-    var closeCookie = document.getElementById('cookie-notification-close');
-    
-    cookieMessage.style.display = 'block';  
-    closeCookie.addEventListener("click", function(e) {  
-      e.preventDefault();
-      localStorage.setItem("cookiesAccepted", true);
-      
-      cookieMessage.style.display = 'none';
-    });
-  }
-  </script>
 
   <div class="hero_area">
-
-    <header class="header_section">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" alt="" />
-            <span>
-              SmartEat
-            </span>
-          </a>
-          <div class="contact_nav" id="">
-            <ul class="navbar-nav ">
-              <li class="nav-item">
-                <a class="nav-link" href="service.html">
-                  <img src="images/location.png" alt="" />
-                  <span>Localização</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="service.html">
-                  <img src="images/phone.png" alt="" />
-                  <span>+55 3199999999</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="service.html">
-                  <img src="images/mail.png" alt="" />
-                  <span>demo@gmail.com</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-
-    </header>
-
+    
+    <?php include 'header.php';?>
+    
     <section class="slider_section position-relative">
       <div class="container">
         <div class="custom_nav2">
@@ -109,10 +61,10 @@
                     <a class="nav-link" href="service.html">Serviços </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Calculadoras</a>
+                    <a class="nav-link" href="calculo.php">Calculadoras</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="html/Login.html">Login</a>
+                    <a class="nav-link" href="Login.php">Login</a>
                   </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
@@ -123,6 +75,7 @@
           </nav>
         </div>
       </div>
+    
       <div class="slider_container">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -150,7 +103,7 @@
                         <a href="" class="btn-1">
                           Ler mais
                         </a>
-                        <a href="html/Login.html" class="btn-2">
+                        <a href="Login.php" class="btn-2">
                           Cadastre-se
                         </a>
                       </div>
@@ -178,7 +131,7 @@
                         <a href="" class="btn-1">
                           Ler mais
                         </a>
-                        <a href="html/Login.html" class="btn-2">
+                        <a href="Login.php" class="btn-2">
                           Cadastre-se
                         </a>
                       </div>
@@ -203,7 +156,7 @@
                       </p>
                       <div class="btn-box">
                     
-                        <a href="html/Login.html" class="btn-2">
+                        <a href="Login.php" class="btn-2">
                           Cadastre-se
                         </a>
                       </div>
@@ -231,7 +184,7 @@
       </div>
       <div class="box">
         <div class="img-box">
-          <img src="images/logo.png" alt="">
+          <img src="../images/logo.png" alt="">
         </div>
         <div class="detail-box">
           <p>
@@ -258,13 +211,13 @@
       </div>
       <div class="service_container">
         <div class="box">
-          <img src="images/calculo-caloria.jpg" alt="">
+          <img src="../images/calculo-caloria.jpg" alt="">
           <h6 class="visible_heading">
             CÁLCULO DE CALORIAS
           </h6>
           <div class="link_box">
             <a href="">
-              <img src="images/link.png" alt="">
+              <img src="../images/link.png" alt="">
             </a>
             <h6>
               CÁLCULO DE CALORIAS
@@ -272,13 +225,13 @@
           </div>
         </div>
         <div class="box">
-          <img src="images/receitas-saudaveis.jpg" alt="">
+          <img src="../images/receitas-saudaveis.jpg" alt="">
           <h6 class="visible_heading">
             IDEIAS DE RECEITAS SAUDÁVEIS
           </h6>
           <div class="link_box">
             <a href="">
-              <img src="images/link.png" alt="">
+              <img src="../images/link.png" alt="">
             </a>
             <h6>
               IDEIAS DE RECEITAS SAUDÁVEIS
@@ -286,13 +239,13 @@
           </div>
         </div>
         <div class="box">
-          <img src="images/dicas-saude.jpg" alt="">
+          <img src="../images/dicas-saude.jpg" alt="">
           <h6 class="visible_heading">
             DICAS SOBRE SAÚDE
           </h6>
           <div class="link_box">
             <a href="">
-              <img src="images/link.png" alt="">
+              <img src="../images/link.png" alt="">
             </a>
             <h6>
               DICAS SOBRE SAÚDE
@@ -300,13 +253,13 @@
           </div>
         </div>
         <div class="box">
-          <img src="images/suporte.jpg" alt="">
+          <img src="../images/suporte.jpg" alt="">
           <h6 class="visible_heading">
             SUPORTE 24/7
           </h6>
           <div class="link_box">
             <a href="">
-              <img src="images/link.png" alt="">
+              <img src="../images/link.png" alt="">
             </a>
             <h6>
               SUPORTE 24/7
@@ -332,7 +285,7 @@
       <div class="us_container">
         <div class="box">
           <div class="img-box">
-            <img src="images/website.png" alt="">
+            <img src="../images/website.png" alt="">
           </div>
           <div class="detail-box">
             <h5>
@@ -345,7 +298,7 @@
         </div>
         <div class="box">
           <div class="img-box">
-            <img src="images/qualidade.png" alt="">
+            <img src="../images/qualidade.png" alt="">
           </div>
           <div class="detail-box">
             <h5>
@@ -358,7 +311,7 @@
         </div>
         <div class="box">
           <div class="img-box">
-            <img src="images/apoio-suporte.png" alt="">
+            <img src="../images/apoio-suporte.png" alt="">
           </div>
           <div class="detail-box">
             <h5>
@@ -371,7 +324,7 @@
         </div>
         <div class="box">
           <div class="img-box">
-            <img src="images/gratuitamente.png" alt="">
+            <img src="../images/gratuitamente.png" alt="">
           </div>
           <div class="detail-box">
             <h5>
@@ -409,7 +362,7 @@
           <div class="carousel-item active">
             <div class="box">
               <div class="img-box">
-                <img src="images/usuario.png" alt="">
+                <img src="../images/usuario.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -424,7 +377,7 @@
           <div class="carousel-item">
             <div class="box">
               <div class="img-box">
-                <img src="images/usuario.png" alt="">
+                <img src="../images/usuario.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -439,7 +392,7 @@
           <div class="carousel-item">
             <div class="box">
               <div class="img-box">
-                <img src="images/usuario.png" alt="">
+                <img src="../images/usuario.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -454,7 +407,7 @@
           <div class="carousel-item">
             <div class="box">
               <div class="img-box">
-                <img src="images/usuario.png" alt="">
+                <img src="../images/usuario.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -481,7 +434,7 @@
       <div class="row">
         <div class="col-md-6 px-0">
           <div class="img-box">
-            <img src="images/result.jpg" >
+            <img src="../images/result.jpg" >
           </div>
         </div>
         <div class="col-lg-4 col-md-5">
@@ -618,37 +571,37 @@
           </h6>
           <div class="info_link-box">
             <a href="">
-              <img src="images/location-white.png" alt="">
+              <img src="../images/location-white.png" alt="">
               <span> R. Afonso Sardinha, 90 - Bairro Minas Talco, Ouro Branco - MG</span>
             </a>
             <a href="">
-              <img src="images/phone-white.png" alt="">
+              <img src="../images/phone-white.png" alt="">
               <span>+55 3199999999</span>
             </a>
             <a href="">
-              <img src="images/mail-white.png" alt="">
+              <img src="../images/mail-white.png" alt="">
               <span> demo@gmail.com</span>
             </a>
           </div>
           <div class="info_social">
             <div>
               <a href="">
-                <img src="images/facebook.png" alt="facebook">
+                <img src="../images/facebook.png" alt="facebook">
               </a>
             </div>
             <div>
               <a href="">
-                <img src="images/instagram.png" alt="instagram">
+                <img src="../images/instagram.png" alt="instagram">
               </a>
             </div>
             <div>
               <a href="">
-                <img src="images/twitter.png" alt="twitter">
+                <img src="../images/twitter.png" alt="twitter">
               </a>
             </div>
             <div>
               <a href="">
-                <img src="images/linkedin.png" alt="linkedin">
+                <img src="../images/linkedin.png" alt="linkedin">
               </a>
             </div>
           </div>
@@ -656,29 +609,23 @@
       </div>
     </div>
   </section>
-
   <!-- end info section -->
 
-
-  <!-- footer section -->
-  <section class="container-fluid footer_section ">
-    <p>
-      &copy; 2023 All Rights Reserved. 
-    </p>
-  </section>
-  <!-- footer section -->
-
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-
+  <!--cookies-->
   <script>
-    function openNav() {
-      document.getElementById("myNav").classList.toggle("menu_width");
-      document
-        .querySelector(".custom_menu-btn")
-        .classList.toggle("menu_btn-style");
-    }
+    if (!localStorage.getItem("cookiesAccepted")) { 
+    var cookieMessage = document.getElementById('cookie-notification');  
+    var closeCookie = document.getElementById('cookie-notification-close');
+    
+    cookieMessage.style.display = 'block';  
+    closeCookie.addEventListener("click", function(e) {  
+      e.preventDefault();
+      localStorage.setItem("cookiesAccepted", true);
+      
+      cookieMessage.style.display = 'none';
+    });
+  }
   </script>
-</body>
 
-</html>
+  <!-- footer section -->
+  <?php include 'footer.php';?>
