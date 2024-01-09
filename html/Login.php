@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["emailLogin"])) {
       if (password_verify($senhaLogin, $senhaHash)) {
           echo "<script>alert('Login bem-sucedido!');</script>";
           $_SESSION['email'] = $emailLogin;
-          // Não armazene a senha descriptografada na sessão
+          // Não manter a senha descriptografada na sessão
           header('Location: calculo.php');
       } else {
           unset($_SESSION['email']);

@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
       
   }
+  $conexao->close();
 
 }
 //var_dump($_POST); // depurar

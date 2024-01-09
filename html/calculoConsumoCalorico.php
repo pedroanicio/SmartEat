@@ -1,3 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>SmartEat</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" type="text/css" href="../style/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap"
+    rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="../style/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style/style.css">
+  <!-- responsividade -->
+  <link href="../style/responsive.css" rel="stylesheet" />
+</head>
+
+ <!-- header section -->
+<?php include 'header.php';?>
 
 <?php
 include('session.php');
@@ -53,12 +85,22 @@ if ($result->num_rows > 0) {
     $tmbModeradamenteAtivo = $tmb * 1.55;
     $tmbMuitoAtivo = $tmb * 1.725;
     
-    echo "<br><br>Como determinar a necessidade diária de calorias (NDC): ";
+    echo "<br><br><b>Como determinar a necessidade diária de calorias (NDC):</b> ";
     echo "<br>Nenhuma atividade física: " . number_format($tmbSedentario, 2) . " calorias por dia.";
     echo "<br>Exercício leve (1 a 3 dias por semana): " . number_format($tmbLevementeAtivo, 2) . " calorias por dia.";
     echo "<br>Exercício moderado (3 a 5 dias por semana): " . number_format($tmbModeradamenteAtivo, 2) . " calorias por dia.";
-    echo "<br>Exercício pesado (6 a 7 dias por semana): " . number_format($tmbMuitoAtivo, 2) . " calorias por dia.";
+    echo "<br>Exercício pesado (6 a 7 dias por semana): " . number_format($tmbMuitoAtivo, 2) . " calorias por dia.<br><br>";
 
+    //Determinar a quantidade de calorias para ganhar ou perder peso
+    echo "<b>Para perder peso, você deve consumir menos calorias do que seu corpo queima diariamente.</b><br>";
+    echo "O ideal é que não se consumam menos calorias que o necessário para manter a taxa de metabolismo basal (TMB) por longos períodos. <br>";
+    echo "NDC - de 500 a 600 calorias = Quantidade máxima de calorias que pode ser ingerida diariamente.<br><br>";
+
+    echo "<b>Para ganhar peso, você deve consumir mais calorias do que seu corpo queima diariamente.</b><br>";
+    echo "NDC + de 500 a 600 calorias = Quantidade máxima de calorias que pode ser ingerida diariamente.<br><br>";
+
+    echo "<b>Para manter o peso, você deve consumir a quantidade mais proxima possível das calorias do que seu corpo queima diariamente.</b><br>";
+    
 
 } else {
     echo "Erro ao recuperar dados do usuário.";
@@ -68,36 +110,5 @@ if ($result->num_rows > 0) {
 $conexao->close();
 ?>
 
-
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>SmartEat</title>
-
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
-
-  <!-- bootstrap -->
-  <link rel="stylesheet" type="text/css" href="../style/bootstrap.css" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap"
-    rel="stylesheet" />
-  <!-- Custom styles for this template -->
-  <link href="../style/style.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../style/style.css">
-  <!-- responsividade -->
-  <link href="../style/responsive.css" rel="stylesheet" />
-</head>
-
- <!-- header section -->
-<?php include 'header.php';?>
+<!-- footer section -->
+<?php include 'footer.php';?>

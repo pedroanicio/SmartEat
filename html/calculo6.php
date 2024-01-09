@@ -28,8 +28,10 @@
             }
 
         }
+        $conexao->close();
 
     }
+
     //var_dump($_POST); // depurar
 
 ?>
