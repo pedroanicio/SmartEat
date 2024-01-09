@@ -22,7 +22,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="service.html">
+                <a class="nav-link" href="entreContato.php">
                   <img src="../images/mail.png" alt="" />
                   <span>demo@gmail.com</span>
                 </a>

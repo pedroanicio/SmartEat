@@ -546,7 +546,7 @@
               <img src="../images/phone-white.png" alt="">
               <span>+55 3199999999</span>
             </a>
-            <a href="">
+            <a href="entreContato.php">
               <img src="../images/mail-white.png" alt="">
               <span> demo@gmail.com</span>
             </a>

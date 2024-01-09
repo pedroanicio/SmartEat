@@ -77,7 +77,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["email"])) {
         echo "As senhas não conferem";
         return;
       }else{
-        $query = "INSERT INTO user (email, senha, nome) VALUES ('$email', '$senha', '$nome')";
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+        $query = "INSERT INTO user (email, senha, nome) VALUES ('$email', '$senhaHash', '$nome')";
         $resultado = $conexao->query($query);  
         if ($resultado) {
           echo "<script>alert('Usuário cadastrado com sucesso!');</script>";
@@ -93,32 +95,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["email"])) {
 }
 // Lógica de autenticação
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["emailLogin"])) {
- // Conectar ao banco de dados
- include_once("../BD/config.php");
-
+  // Conectar ao banco de dados
+  include_once("../BD/config.php");
 
   $emailLogin = $_POST["emailLogin"];
   $senhaLogin = $_POST["senhaLogin"];
 
-  // Verificar se o e-mail existe no banco
-  $queryLogin = "SELECT * FROM user WHERE email = '$emailLogin' and senha = '$senhaLogin'";
+  // Buscar a senha criptografada no banco
+  $queryLogin = "SELECT senha FROM user WHERE email = '$emailLogin'";
   $resultadoLogin = $conexao->query($queryLogin);
 
-  $result = $conexao->query($queryLogin);
-  //print_r($queryLogin);
-  //print_r($resultadoLogin);
+  if ($resultadoLogin->num_rows > 0) {
+      $row = $resultadoLogin->fetch_assoc();
+      $senhaHash = $row['senha'];
 
-  if(mysqli_num_rows($result) > 0){
-    echo "<script>alert('Login bem-sucedido!');</script>";
-    $_SESSION['email'] = $emailLogin;
-    $_SESSION['senha'] = $senhaLogin;
-    header('Location: calculo.php');
-  }else{
-    unset ($_SESSION['email']);
-    unset ($_SESSION['senha']);
-    echo "<script>alert('Usuário inexistente ');</script>";
+      // Verificar se a senha informada corresponde à senha criptografada
+      if (password_verify($senhaLogin, $senhaHash)) {
+          echo "<script>alert('Login bem-sucedido!');</script>";
+          $_SESSION['email'] = $emailLogin;
+          // Não armazene a senha descriptografada na sessão
+          header('Location: calculo.php');
+      } else {
+          unset($_SESSION['email']);
+          echo "<script>alert('Senha incorreta');</script>";
+      }
+  } else {
+      unset($_SESSION['email']);
+      echo "<script>alert('Usuário inexistente');</script>";
   }
-
 }
 
 ?>
