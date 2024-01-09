@@ -1,5 +1,41 @@
 <?php 
   include('session.php');
+
+
+// Verifica se o formulário foi enviado
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+  // Conectar ao banco de dados
+  include_once("../BD/config.php");
+
+  // Verifica se o campo 'update' está presente no POST
+  if (isset($_POST['update'])) {
+      // Obtém o valor do campo de peso
+      $objetivo = $_POST['update'];
+
+      if ($conexao->connect_error) {
+          die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
+      }
+
+      $objetivo = $conexao->real_escape_string($objetivo);
+      $logado = $_SESSION['email'];
+
+      $query = "UPDATE user SET objetivo = '$objetivo' WHERE email = '$logado'";
+      $result = $conexao->query($query);
+
+      if ($conexao->query($query) == TRUE) {
+        echo "Objetivo salvo com sucesso!";
+        header('Location: calculo2.php');
+      } else {
+          echo "Erro ao salvar o peso: " . $conexao->error;
+      }
+
+      
+  }
+
+}
+//var_dump($_POST); // depurar
+
+
 ?>
 
 <!DOCTYPE html>
@@ -76,43 +112,6 @@
 
 </body>
 
-<?php 
-
-// Verifica se o formulário foi enviado
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    // Conectar ao banco de dados
-    include_once("../BD/config.php");
-
-    // Verifica se o campo 'update' está presente no POST
-    if (isset($_POST['update'])) {
-        // Obtém o valor do campo de peso
-        $objetivo = $_POST['update'];
-
-        if ($conexao->connect_error) {
-            die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
-        }
-
-        $objetivo = $conexao->real_escape_string($objetivo);
-        $logado = $_SESSION['email'];
-
-        $query = "UPDATE user SET objetivo = '$objetivo' WHERE email = '$logado'";
-        $result = $conexao->query($query);
-
-        if ($conexao->query($query) == TRUE) {
-          echo "Objetivo salvo com sucesso!";
-          header('Location: calculo2.php');
-        } else {
-            echo "Erro ao salvar o peso: " . $conexao->error;
-        }
-
-        $conexao->close();
-    }
-
-}
-//var_dump($_POST); // depurar
-
-
-?>
 
 <!-- footer section -->
 <?php include 'footer.php';?>

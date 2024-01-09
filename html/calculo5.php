@@ -1,5 +1,38 @@
 <?php 
   include('session.php');
+
+    // Verifica se o formulário foi enviado
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        // Conectar ao banco de dados
+        include_once("../BD/config.php");
+
+        // Verifica se o campo 'update' está presente no POST
+        if (isset($_POST['update'])) {
+            // Obtém o valor do campo de peso
+            $altura = $_POST['update'];
+
+            if ($conexao->connect_error) {
+                die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
+            }
+
+            $altura = $conexao->real_escape_string($altura);
+            $logado = $_SESSION['email'];
+
+            $query = "UPDATE user SET altura = '$altura' WHERE email = '$logado'";
+            
+            if ($conexao->query($query) == TRUE) {
+                echo "Altura salva com sucesso!";
+                header('Location: calculo6.php');
+            } else {
+                echo "Erro ao salvar a altura: " . $conexao->error;
+            }
+
+        }
+
+    }
+    //var_dump($_POST); // depurar
+
+
 ?>
 
 <!DOCTYPE html>
@@ -77,41 +110,6 @@
         </div>
     </form>            
 </main>
-
-<?php
-
-// Verifica se o formulário foi enviado
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    // Conectar ao banco de dados
-    include_once("../BD/config.php");
-
-    // Verifica se o campo 'update' está presente no POST
-    if (isset($_POST['update'])) {
-        // Obtém o valor do campo de peso
-        $altura = $_POST['update'];
-
-        if ($conexao->connect_error) {
-            die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
-        }
-
-        $altura = $conexao->real_escape_string($altura);
-        $logado = $_SESSION['email'];
-
-        $query = "UPDATE user SET altura = '$altura' WHERE email = '$logado'";
-        
-        if ($conexao->query($query) == TRUE) {
-            echo "Altura salva com sucesso!";
-            header('Location: calculo6.php');
-        } else {
-            echo "Erro ao salvar a altura: " . $conexao->error;
-        }
-
-    }
-
-}
-//var_dump($_POST); // depurar
-
-?>
 
 
  <!-- footer section -->

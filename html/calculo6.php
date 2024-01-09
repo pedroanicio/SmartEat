@@ -1,5 +1,37 @@
 <?php 
   include('session.php');
+
+    // Verifica se o formulário foi enviado
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        // Conectar ao banco de dados
+        include_once("../BD/config.php");
+
+        // Verifica se o campo 'update' está presente no POST
+        if (isset($_POST['update'])) {
+            // Obtém o valor do campo de peso
+            $idade = $_POST['update'];
+
+            if ($conexao->connect_error) {
+                die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
+            }
+
+            $idade = $conexao->real_escape_string($idade);
+            $logado = $_SESSION['email'];
+
+            $query = "UPDATE user SET idade = '$idade' WHERE email = '$logado'";
+            
+            if ($conexao->query($query) == TRUE) {
+                echo "Idade salva com sucesso!";
+                header('Location: calculoConsumoCalorico.php');
+            } else {
+                echo "Erro ao salvar a idade: " . $conexao->error;
+            }
+
+        }
+
+    }
+    //var_dump($_POST); // depurar
+
 ?>
 
 <!DOCTYPE html>
@@ -77,42 +109,6 @@
         <input type="hidden" id="height__token" name="height[_token]" value="ROssfvN2jaZClELmckqPuEAB0Bb7fmq0pfOkTrJQIWE">
     </form>
 </main>
-
-
-<?php
-
-// Verifica se o formulário foi enviado
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    // Conectar ao banco de dados
-    include_once("../BD/config.php");
-
-    // Verifica se o campo 'update' está presente no POST
-    if (isset($_POST['update'])) {
-        // Obtém o valor do campo de peso
-        $idade = $_POST['update'];
-
-        if ($conexao->connect_error) {
-            die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
-        }
-
-        $idade = $conexao->real_escape_string($idade);
-        $logado = $_SESSION['email'];
-
-        $query = "UPDATE user SET idade = '$idade' WHERE email = '$logado'";
-        
-        if ($conexao->query($query) == TRUE) {
-            echo "Idade salva com sucesso!";
-        } else {
-            echo "Erro ao salvar a idade: " . $conexao->error;
-        }
-
-    }
-
-}
-//var_dump($_POST); // depurar
-
-?>
-
 
  <!-- footer section -->
 <?php include 'footer.php';?>

@@ -52,13 +52,13 @@
               <div class="d-flex  flex-column flex-lg-row align-items-center">
                 <ul class="navbar-nav  ">
                   <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="about.html">Sobre</a>
+                    <a class="nav-link" href="sobre.php">Sobre</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="service.html">Serviços </a>
+                    <a class="nav-link" href="servicos.php">Serviços </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="calculo.php">Calculadoras</a>
@@ -100,7 +100,7 @@
                         além de ter acesso constante a dicas de saúde e bem estar.
                       </p>
                       <div class="btn-box">
-                        <a href="" class="btn-1">
+                        <a href="sobre.php" class="btn-1">
                           Ler mais
                         </a>
                         <a href="Login.php" class="btn-2">
@@ -128,7 +128,7 @@
                         além de ter acesso constante a dicas de saúde e bem estar.
                       </p>
                       <div class="btn-box">
-                        <a href="" class="btn-1">
+                        <a href="sobre.php" class="btn-1">
                           Ler mais
                         </a>
                         <a href="Login.php" class="btn-2">
@@ -191,7 +191,7 @@
             Website realizado para a disciplina de Programação Web, do curso de Sistemas de informação do IFMG - Campus Ouro Branco.
             Temos como objetivo facilitar o acesso a informações sobre saúde e bem estar ajudando o usuário a ter uma vida mais saudável.
           </p>
-          <a href="">
+          <a href="sobre.php">
             Ler mais
           </a>
         </div>
@@ -342,7 +342,7 @@
   <!-- end us section -->
 
 
-  <!-- client section -->
+  <!-- devs section -->
 
   <section class="client_section layout_padding">
     <div class="container">
@@ -355,8 +355,6 @@
         <ol class="carousel-indicators">
           <li data-target="#carouselExample2Indicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExample2Indicators" data-slide-to="1"></li>
-          <li data-target="#carouselExample2Indicators" data-slide-to="2"></li>
-          <li data-target="#carouselExample2Indicators" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -367,36 +365,6 @@
               <div class="detail-box">
                 <h5>
                   Aline Araújo
-                </h5>
-                <p>
-
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="box">
-              <div class="img-box">
-                <img src="../images/usuario.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Caio Lucas
-                </h5>
-                <p>
-
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="box">
-              <div class="img-box">
-                <img src="../images/usuario.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  João Robson
                 </h5>
                 <p>
 
@@ -425,7 +393,7 @@
     </div>
   </section>
 
-  <!-- end client section -->
+  <!-- end devs section -->
 
   <!-- result section -->
 
@@ -447,7 +415,7 @@
               Nosso objetivo sempre foi trazer o melhor para nossos clientes, e para isso, buscamos desenvolver 
               um site completo, intuitivo e de fácil acesso para que você possa ter o melhor acompanhamento de sua saúde. 
             </p>
-            <a href="">
+            <a href="Login.php">
               Cadastre-se
             </a>
           </div>
@@ -549,19 +517,19 @@
           </h6>
           <ul>
             <li class=" active">
-              <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="">
-              <a class="" href="about.html">Sobre </a>
+              <a class="" href="sobre.php">Sobre </a>
             </li>
             <li class="">
-              <a class="" href="service.html">Serviços </a>
+              <a class="" href="servicos.php">Serviços </a>
             </li>
             <li class="">
-              <a class="" href="#contactSection">Calculadoras</a>
+              <a class="" href="Login.php">Calculadoras</a>
             </li>
             <li class="">
-              <a class="" href="html/Login.html">Login</a>
+              <a class="" href="Login.php">Login</a>
             </li>
           </ul>
         </div>
@@ -570,7 +538,7 @@
             Entre em contato
           </h6>
           <div class="info_link-box">
-            <a href="">
+            <a href="https://www.google.com/search?client=ubuntu-sn&hs=PR7&sca_esv=596463110&channel=fs&tbs=lf:1,lf_ui:2&tbm=lcl&q=ifmg+ouro+branco&rflfq=1&num=10&ved=2ahUKEwj6-Mm4is2DAxUHrJUCHQdcD4wQtgN6BAgYEAI#rlfi=hd:;si:;mv:[[-20.511706999999998,-43.7127134],[-20.5138125,-43.7158124]];tbs:lrf:!1m4!1u2!2m2!2m1!1e1!2m1!1e2!3sIAE,lf:1,lf_ui:2"">
               <img src="../images/location-white.png" alt="">
               <span> R. Afonso Sardinha, 90 - Bairro Minas Talco, Ouro Branco - MG</span>
             </a>

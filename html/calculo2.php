@@ -1,5 +1,43 @@
 <?php 
   include('session.php');
+
+
+// Verifica se o formulário foi enviado
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    // Conectar ao banco de dados
+    include_once("../BD/config.php");
+
+    // Verifica se o campo 'update' está presente no POST
+    if (isset($_POST['update'])) {
+        // Obtém o valor do campo de peso
+        $peso = $_POST['update'];
+
+        if ($conexao->connect_error) {
+            die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
+        }
+
+        $peso = $conexao->real_escape_string($peso);
+        $logado = $_SESSION['email'];
+
+        $query = "UPDATE user SET peso = '$peso' WHERE email = '$logado'";
+        $result = $conexao->query($query);
+
+        if ($conexao->query($query) == TRUE) {
+            echo "Peso salvo com sucesso!";
+            header('Location: calculo3.php');
+        } else {
+            echo "Erro ao salvar o peso: " . $conexao->error;
+        }
+
+        $conexao->close();
+    }
+
+}
+//var_dump($_POST); // depurar
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,46 +115,6 @@
         
     </form>
 </main>
-
-<?php 
-
-// Verifica se o formulário foi enviado
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    // Conectar ao banco de dados
-    include_once("../BD/config.php");
-
-    // Verifica se o campo 'update' está presente no POST
-    if (isset($_POST['update'])) {
-        // Obtém o valor do campo de peso
-        $peso = $_POST['update'];
-
-        if ($conexao->connect_error) {
-            die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
-        }
-
-        $peso = $conexao->real_escape_string($peso);
-        $logado = $_SESSION['email'];
-
-        $query = "UPDATE user SET peso = '$peso' WHERE email = '$logado'";
-        $result = $conexao->query($query);
-
-        if ($conexao->query($query) == TRUE) {
-            echo "Peso salvo com sucesso!";
-            header('Location: calculo3.php');
-        } else {
-            echo "Erro ao salvar o peso: " . $conexao->error;
-        }
-
-        $conexao->close();
-    }
-
-}
-//var_dump($_POST); // depurar
-
-
-
-?>
-
 
  <!-- footer section -->
 <?php include 'footer.php';?>
