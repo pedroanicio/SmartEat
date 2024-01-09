@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="container pagination">
       <div class="row mt-16">
         <div class="col-12 d-flex flex-row justify-content-center">
-          Página 1 de 6
+          Página 1 de 6 
         </div>
       </div>
     </div>
@@ -94,19 +94,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         
         <div id="goal" class="checkbox-button mt-32">
           <input type="radio" id="goal_goal_0" name="update" required="required" value="1" checked="checked">
-            <label for="goal1" class="required position-relative hover:bg-lg-dark">
+            <label for="goal_goal_0" class="required position-relative hover:bg-lg-dark">
               Perder peso
             </label>
             <input type="radio" id="goal_goal_1" name="update" required="required" value="2">
-            <label for="goal2" class="required position-relative hover:bg-lg-dark">
+            <label for="goal_goal_1" class="required position-relative hover:bg-lg-dark">
                 Ganhar massa muscular
             </label>
             <input type="radio" id="goal_goal_2"  name="update" required="required" value="3">
-            <label for="goal3" class="required position-relative hover:bg-lg-dark">
+            <label for="goal_goal_2" class="required position-relative hover:bg-lg-dark">
                 Manter peso
             </label>
         </div>
-        <button type="submit" name="confirm_button" >Confirmar</button> 
+        <button class="botaocalculo" type="submit" name="confirm_button" >Confirmar</button> 
       </form>
     </div>
   </main>

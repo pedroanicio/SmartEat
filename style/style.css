@@ -974,3 +974,133 @@ body {
   
   /* end footer section*/
   /*# sourceMappingURL=style.css.map */
+
+  /*calculo */
+
+/* Main section styles */
+.full-height {
+  padding: 50px 0;
+}
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Pagination styles */
+.pagination {
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* Form styles */
+.register-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* Form heading styles */
+.register-form h1 {
+  font-size: 28px;
+  margin-bottom: 32px;
+}
+/* Goal section styles */
+.checkbox-button {
+  display: flex;
+  flex-direction: column;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  label {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  input[type="radio"]:checked + label {
+    background-color: #f8bc1a;
+    color: #fff;
+  }
+}
+.botaocalculo{
+  background-color: #f8bc1a;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 14px 55px;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+.botaocalculo:hover {
+  background-color: #dda201;
+}
+/* Content container styles */
+.content-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+
+/* Form heading styles */
+.content-container h1 {
+  font-size: 28px;
+  margin-bottom: 32px;
+}
+
+/* Form paragraph styles */
+.content-container p {
+  font-size: 16px;
+  margin-top: 16px;
+}
+/* Input wrapper styles */
+.input-label-wrapper {
+  position: relative;
+  margin-top: 4px;
+}
+
+/* Input styles */
+.input-label-wrapper input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button container styles */
+.button-bottom-container {
+  margin-top: 20px;
+}
+.bodyFinal{
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+.resultadosFinais{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.info-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  width: 80%;
+}
+.tituloFInal{
+  color: #c59100;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+  

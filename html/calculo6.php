@@ -85,7 +85,7 @@
     </div>
 
     <form name="formIdade" method="post" action="calculo6.php">
-        <div class="content-container">
+        <div class="container register-form">
             <div class="row">
                 <div class="col-12">
                     <h1 class="mt-32">Qual é a sua idade?</h1>
@@ -101,14 +101,12 @@
                 <input type="text" name="update" value="" maxlength="150" required>
                 <label class="label mb-8 ml-8 required"></label>   
             </div>
-        </div>
-
-        <div class="button-bottom-container">
-            <button type="submit" onclick="yz_events.sendGaEvent('ProSignUp', 'Submit', 'Height');" name="height[submit]" class="yz-btn blue submit-button">
+            <div class="button-bottom-container">
+            <button class="botaocalculo" type="submit" onclick="yz_events.sendGaEvent('ProSignUp', 'Submit', 'Height');" name="height[submit]" class="yz-btn blue submit-button">
             Próximo
         </button>
         </div>
-        <input type="hidden" id="height__token" name="height[_token]" value="ROssfvN2jaZClELmckqPuEAB0Bb7fmq0pfOkTrJQIWE">
+        </div>
     </form>
 </main>
 

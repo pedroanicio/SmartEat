@@ -85,7 +85,7 @@
     </div>
 
     <form name="formAltura" method="post" action="calculo5.php">
-        <div class="content-container">
+        <div class="container register-form">
             <div class="row">
                 <div class="col-12">
                     <h1 class="mt-32">Qual é a sua altura?</h1>
@@ -102,12 +102,11 @@
                 <input type="text" name="update" value="" required>
                 <label class="label mb-8 ml-8 required">cm</label>
             </div>
-        </div>
-
-        <div class="button-bottom-container">
-            <button type="submit" id="altura">
+            <div class="button-bottom-container">
+            <button class="botaocalculo" type="submit" id="altura">
                 Próximo
                 </button>
+        </div>
         </div>
     </form>            
 </main>

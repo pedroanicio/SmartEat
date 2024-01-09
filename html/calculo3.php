@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </div>
 
     <form name="formObjetivo" method="post" action="calculo3.php">
-        <div class="content-container">
+        <div class="container register-form">
             <div class="row">
                 <div class="col-12">
                     <h1 class="mt-32">Qual é seu objetivo de peso?</h1>
@@ -102,12 +102,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <label class="label required" id="metric-input-label" for="goal_weight_goal_weight">kg</label>
                 </div>
             </div>
-        </div>
-
-        <div class="button-bottom-container">
-            <button type="submit" id="metaPeso">
+            <div class="button-bottom-container">
+            <button class="botaocalculo" type="submit" id="metaPeso">
             Próximo
             </button>
+        </div>
         </div>
     </form>
 </main>
