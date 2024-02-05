@@ -1,7 +1,7 @@
 <?php
     $dbHost = '127.0.0.1';
     $dbUsername = 'suporte';
-    $dbPassword = "Pedro1001@";
+    $dbPassword = "";
     $dbName = 'TrabalhoWeb';
     $port = 3306; // ou a porta que você configurou no XAMPP
 
